@@ -35,6 +35,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3.5.1
       - name: Build app
+        working-directory: ./front
         run: npm ci
       - name: Run tests
+        working-directory: ./front
         run: npm test
