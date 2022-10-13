@@ -39,4 +39,4 @@ jobs:
         run: npm ci
       - name: Run tests
         working-directory: ./front
-        run: npm test
+        run: ng test --browsers=ChromeHeadless --watch=false --code-coverage
