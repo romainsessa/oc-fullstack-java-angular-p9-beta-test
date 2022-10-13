@@ -45,3 +45,12 @@ jobs:
         with:
           name: frontend-report
           path: ${{ github.workspace }}/front/coverage/bobapp
+  code-quality:
+    name: SonarCloud Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: scan-sonar
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
