@@ -26,7 +26,7 @@ jobs:
         with:
           name: jacoco-report
           path: ${{ github.workspace }}/back/target/site/jacoco
-  front-backend:
+  test-frontend:
     name: Frontend tests
     runs-on: ubuntu-latest
     steps:
