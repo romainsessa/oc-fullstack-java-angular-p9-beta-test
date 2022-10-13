@@ -21,3 +21,9 @@ jobs:
       - name: Run Tests
         working-directory: ./back
         run: mvn -B test
+      - name: Jacoco Report
+        uses: 'actions/upload-artifact@v3.1.0'
+        with:
+          name: jacoco-report
+          path: ${{ github.workspace }}/back/target/site/jacoco
+
