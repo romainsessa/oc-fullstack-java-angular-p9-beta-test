@@ -99,8 +99,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-      - name: Backend docker images build
-        uses: docker/bake-action@v2.3.0
+      - name: Build
+        uses: docker/build-push-action@v3.2.0
         with:
-          workdir: ./back
+          file: ./back/Dockerfile
+          tags: backend:latest
     
