@@ -91,9 +91,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  backend-docker:
-    name: Backend docker images build
-    uses: docker/bake-action@v2.3.0
-    with:
-      workdir: ./back
+  build-docker:
+    name: Build docker images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Backend docker images build
+        uses: docker/bake-action@v2.3.0
+        with:
+          workdir: ./back
     
