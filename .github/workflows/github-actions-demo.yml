@@ -77,7 +77,15 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build Java binaries
         working-directory: ./back
-        run: mvn -DskipTests=true package
+        run: mvn package
+      - name: Setup Node.js
+        uses: actions/setup-node@v3.5.1
+      - name: Build app
+        working-directory: ./front
+        run: npm ci
+      - name: Run tests
+        working-directory: ./front
+        run: npm run test-coverage
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
