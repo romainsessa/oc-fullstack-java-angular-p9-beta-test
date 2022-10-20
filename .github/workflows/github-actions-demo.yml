@@ -102,6 +102,7 @@ jobs:
       - name: Build
         uses: docker/build-push-action@v3.2.0
         with:
+          working-directory: ./back
           file: ./back/Dockerfile
           tags: backend:latest
     
